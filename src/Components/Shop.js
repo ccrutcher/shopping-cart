@@ -32,7 +32,7 @@ class Shop extends Component {
     
     render(){
 
-        console.log(this.state.pets[0])
+        /*console.log(this.state.pets[0])
 
         this.setState(prevState => ({
             pets: prevState.pets.map(
@@ -40,7 +40,7 @@ class Shop extends Component {
           )
         }));
 
-        console.log(this.state.pets[0]);
+        console.log(this.state.pets[0]);*/
 
         return(
             <div>
