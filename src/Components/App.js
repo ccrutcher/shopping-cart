@@ -2,11 +2,13 @@ import React from 'react';
 import Navbar from './Navbar'
 import '../Styles/App.css'
 
+
 const App = () => {
+
   return (
     <div className="App">
       <Navbar/>
-      <content id="content">
+      <div id="content">
         <h1>What we do</h1>
         <p>
           We offer a premium Pet Petting™ service. Simply head to our shop, 
@@ -15,9 +17,6 @@ const App = () => {
           for which you have a pet voucher, you simply present the voucher and you get 
           to pet the animal. It's as easy at that!
         </p>
-      </content>
-      <div className="Carousel">
-        <h2>These are just some of the pets you could be petting:</h2>
       </div>
     </div>
   );
