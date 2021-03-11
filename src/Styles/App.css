@@ -1,0 +1,16 @@
+.App {
+    display: flex;
+    flex-direction: column;
+}
+
+#content {
+    width: 90vw;
+    align-self: center;
+}
+
+.Carousel {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+    align-items: center;
+}

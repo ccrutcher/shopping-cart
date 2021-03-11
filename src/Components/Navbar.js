@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const navbar = () => {
     return(
         <div className="Navbar">
-            <span id="banner-msg">Shopping Site</span>
+            <span id="banner-msg">Pet These Pets</span>
             <div id="link-container">
                 <Link to='/' className="link">Main Page</Link>
                 <Link to='/shop' className="link">Shop</Link>
