@@ -28,16 +28,28 @@ class Shop extends Component {
 
     }
 
+
     
     render(){
+
+        console.log(this.state.pets[0])
+
+        this.setState(prevState => ({
+            pets: prevState.pets.map(
+            obj => (obj.name === 'Scoobert' ? Object.assign(obj, { number: 1 }) : obj)
+          )
+        }));
+
+        console.log(this.state.pets[0]);
+
         return(
             <div>
                 <Navbar />
                 <div className="shop-container">
                     <div className="shop">
-                            {this.state.pets.map((pet) => {
-                                return <Card source={pet.image} name={pet.name} number={pet.number} key={pet.name}/>
-                            })}
+                        {this.state.pets.map((pet, index) => {
+                            return <Card source={pet.image} name={pet.name} number={pet.number} index={index} key={index}/>
+                        })}
                     </div>
                     <Cart />
                 </div>
@@ -47,3 +59,7 @@ class Shop extends Component {
 };
 
 export default Shop;
+
+/*this.state.pets.map((pet) => {
+    return <Card source={pet.image} name={pet.name} number={pet.number} key={pet.name}/>
+})*/

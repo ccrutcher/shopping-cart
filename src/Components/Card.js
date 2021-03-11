@@ -7,7 +7,7 @@ const Card = (props) => {
 
     return(
         <div className="card-container">
-            <div className="card" onClick={() => console.log(props.name)}>
+            <div className="card" onClick={() => console.log(props.name, props.index)}>
                 <img src={props.source}></img>
             </div>
             <div className="card-info">
