@@ -13,25 +13,37 @@ import seventh from '../Imgs/7.jpeg'
 import eighth from '../Imgs/8.jpg'
 import ninth from '../Imgs/9.jpeg'
 
-const Shop = () => {
 
-    const pets = [{name: "first", image: first},{name: "second", image: second},{name: "third", image: third},
-        {name: "fourth", image: fourth},{name: "fifth", image: fifth},{name: "sixth", image: sixth},
-        {name: "seventh", image: seventh}, {name: "eighth", image: eighth},{name: "ninth", image: ninth}];
 
+class Shop extends Component {
+
+    constructor(){
+        super()
+
+        this.state = {
+            pets: [{name: "Scoobert", image: first, number: 0},{name: "Millie", image: second, number: 0},{name: "Mr. Hops", image: third, number: 0},
+            {name: "Trumpet", image: fourth, number: 0},{name: "Benjamin", image: fifth, number: 0},{name: "Puddles", image: sixth, number: 0},
+            {name: "Sir Mixalot", image: seventh, number: 0}, {name: "Tootsie Roll", image: eighth, number: 0},{name: "Dr. Chaos", image: ninth, number: 0}]
+        }
+
+    }
+
+    
+    render(){
         return(
             <div>
                 <Navbar />
                 <div className="shop-container">
                     <div className="shop">
-                            {pets.map((pet) => {
-                                return <Card source={pet.image} name={pet.name} key={pet.name}/>
+                            {this.state.pets.map((pet) => {
+                                return <Card source={pet.image} name={pet.name} number={pet.number} key={pet.name}/>
                             })}
                     </div>
                     <Cart />
                 </div>
             </div>
         );
+    }
 };
 
 export default Shop;
