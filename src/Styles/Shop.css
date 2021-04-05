@@ -20,9 +20,37 @@
     text-align: center;
 }
 
-.checkout {
+.items {
+    width: 75%;
+}
+
+li {
+    position: relative;
+}
+
+.pet-name {
+    float: left;
+    margin: 0px;
+}
+
+.pet-number {
+    position: absolute;
+    right: 0;
+}
+
+#total {
+    margin-left: 2%;
+    text-align: right;
+}
+
+.checkout-container {
     align-self: center;
     width: 50%;
+    text-align: center
+}
+
+#checkout-btn {
+    width: 100%;
 }
 
 .shop{

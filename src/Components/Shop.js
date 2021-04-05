@@ -21,37 +21,38 @@ class Shop extends Component {
         super()
 
         this.state = {
+            number: 0,
             pets: [{name: "Scoobert", image: first, number: 0},{name: "Millie", image: second, number: 0},{name: "Mr. Hops", image: third, number: 0},
             {name: "Trumpet", image: fourth, number: 0},{name: "Benjamin", image: fifth, number: 0},{name: "Puddles", image: sixth, number: 0},
             {name: "Sir Mixalot", image: seventh, number: 0}, {name: "Tootsie Roll", image: eighth, number: 0},{name: "Dr. Chaos", image: ninth, number: 0}]
         }
 
+        this.changeNum = this.changeNum.bind(this);
     }
 
 
-    
+    changeNum(index, number, value) {
+        value = Number(value);
+
+        const pets = [...this.state.pets]
+        pets[index] = {...pets[index], number: value}
+        this.setState({pets});
+        
+    }
+
+
+
     render(){
-
-        /*console.log(this.state.pets[0])
-
-        this.setState(prevState => ({
-            pets: prevState.pets.map(
-            obj => (obj.name === 'Scoobert' ? Object.assign(obj, { number: 1 }) : obj)
-          )
-        }));
-
-        console.log(this.state.pets[0]);*/
-
         return(
             <div>
                 <Navbar />
                 <div className="shop-container">
                     <div className="shop">
                         {this.state.pets.map((pet, index) => {
-                            return <Card source={pet.image} name={pet.name} number={pet.number} index={index} key={index}/>
+                            return <Card source={pet.image} name={pet.name} number={pet.number} index={index} key={index} changeNum={this.changeNum}/>
                         })}
                     </div>
-                    <Cart />
+                    <Cart pets={this.state.pets}/>
                 </div>
             </div>
         );
@@ -59,7 +60,3 @@ class Shop extends Component {
 };
 
 export default Shop;
-
-/*this.state.pets.map((pet) => {
-    return <Card source={pet.image} name={pet.name} number={pet.number} key={pet.name}/>
-})*/
